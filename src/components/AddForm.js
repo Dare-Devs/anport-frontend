@@ -4,20 +4,28 @@ const AddForm = () => {
   return (
     <div className="form">
       <div className="form-input">
-        <label>Firstname</label>
-        <input type="text" />
+        <label>
+          Firstname &nbsp;
+          <input type="text" />
+        </label>
       </div>
       <div className="form-input">
-        <label>Lastname</label>
-        <input type="text" />
+        <label>
+          Lastname &nbsp;
+          <input type="text" />
+        </label>
       </div>
       <div className="form-input">
-        <label>School Id</label>
-        <input type="text" />
+        <label>
+          School Id &nbsp;
+          <input type="text" />
+        </label>
       </div>
       <div className="form-input">
-        <label>Password</label>
-        <input type="text" />
+        <label>
+          Password &nbsp;
+          <input type="password" />
+        </label>
       </div>
       <div className="form-input radio">
         <label for="male">

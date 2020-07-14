@@ -15,11 +15,26 @@ body {
   font-size: 1.1em;
 }
 .form {
-  width: 25rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-top: 10%;
   align-items: center;
   height: 200px;
+
+  .form-input {
+    margin-bottom: 5px;
+
+    label {
+      font-size: 1.5em;
+
+      input {
+        height: 20px;
+      }
+    }
+  }
+  button {
+    margin-top: 10px;
+  }
 }
