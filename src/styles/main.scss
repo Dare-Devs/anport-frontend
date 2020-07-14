@@ -1,0 +1,25 @@
+@import './admin';
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.general-button {
+  height: 40px;
+  background-color: rgba(62, 11, 56, 0.89);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+.form {
+  width: 25rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+}

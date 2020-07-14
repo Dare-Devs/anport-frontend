@@ -1,9 +1,11 @@
 import React from 'react'
+import AdminPage from './pages/admin/AdminPage'
+import './styles/main.scss'
 
 const App = () => {
   return (
     <div>
-      <div>anport</div>
+      <AdminPage />
     </div>
   )
 }
