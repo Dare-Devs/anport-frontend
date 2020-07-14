@@ -13,7 +13,7 @@ const Porters = () => {
   return (
     <div className="admin-main-page">
       <ButtonNav
-        button1="Create Porter"
+        button1="Add Porter"
         button2="Edit Porter Details"
         button3="Delete Porter"
         setContent={setContent}
