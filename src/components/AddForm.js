@@ -19,10 +19,15 @@ const AddForm = () => {
         <label>Password</label>
         <input type="text" />
       </div>
-      <div className="form-input">
-        <label>Gender</label>
-        <input type="radio" />
-        <input type="radio" />
+      <div className="form-input radio">
+        <label for="male">
+          <input type="radio" id="male" name="male-female" />
+          Male
+        </label>
+        <label for="female">
+          <input type="radio" id="female" value="female" name="male-female" />
+          Female
+        </label>
       </div>
 
       <button className="general-button">Submit</button>
