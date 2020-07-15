@@ -46,7 +46,7 @@ const Porters = () => {
     if (content === 1)
       return <AddForm handleCreateSubmit={handleCreateSubmit} />
     if (content === 2)
-      return <EditUser porters={porters} deletePorter={deletePorter} />
+      return <EditUser users={porters} deleteUser={deletePorter} />
   }
   return (
     <div className="admin-main-page">
