@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-const EditUser = ({ porters, deletePorter }) => {
+const EditUser = ({ users, deleteUser }) => {
   return (
     <div className="edit-user">
-      {porters.map((porter) => (
-        <Details porter={porter} deletePorter={deletePorter} />
+      {users.map((user) => (
+        <Details user={user} deleteUser={deleteUser} key={user.id} />
       ))}
     </div>
   )
@@ -12,16 +12,16 @@ const EditUser = ({ porters, deletePorter }) => {
 
 export default EditUser
 
-const Details = ({ porter, deletePorter }) => {
+const Details = ({ user, deleteUser }) => {
   const [formView, setFormView] = useState(false)
   const style = formView ? { display: '' } : { display: 'none' }
   return (
-    <div className="user-details" key={porter.id}>
+    <div className="user-details">
       <div className="user-details-text">
-        &nbsp;{porter.firstName}&nbsp;{porter.lastName}
+        &nbsp;{user.firstName}&nbsp;{user.lastName}
         <div style={style}>
-          <div>&nbsp;{porter.schoolId}</div>
-          <div>&nbsp;{porter.email}</div>
+          <div>&nbsp;{user.schoolId}</div>
+          <div>&nbsp;{user.email}</div>
         </div>
       </div>
       <div className="spacer"></div>
@@ -36,7 +36,7 @@ const Details = ({ porter, deletePorter }) => {
         <button
           className="general-button"
           id="delete-button"
-          onClick={() => deletePorter(porter)}
+          onClick={() => deleteUser(user)}
         >
           Delete
         </button>
