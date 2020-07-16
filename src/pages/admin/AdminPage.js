@@ -4,7 +4,7 @@ import Porters from './Porters'
 import StudentAffairs from './StudentAffairs'
 
 const AdminPage = () => {
-  const [currentPage, setCurrentPage] = useState(2)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const adminMainPage = () => {
     if (currentPage === 1) return <StudentAffairs />
