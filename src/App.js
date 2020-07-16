@@ -6,7 +6,7 @@ import './styles/main.scss'
 const App = () => {
   return (
     <div>
-      <AdminPage />
+      {/* <AdminPage /> */}
       <PorterPage />
     </div>
   )
