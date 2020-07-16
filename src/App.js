@@ -6,8 +6,8 @@ import './styles/main.scss'
 const App = () => {
   return (
     <div>
-      {/* <AdminPage /> */}
-      <PorterPage />
+      <AdminPage />
+      {/* <PorterPage /> */}
     </div>
   )
 }
