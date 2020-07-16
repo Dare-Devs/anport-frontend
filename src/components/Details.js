@@ -4,6 +4,7 @@ const Details = ({ user, deleteUser }) => {
   const [formView, setFormView] = useState(false)
   const showOnEdit = formView ? { display: '' } : { display: 'none' }
   const hideOnEdit = !formView ? { display: '' } : { display: 'none' }
+
   return (
     <div className="user-details">
       <div className="user-details-text">
@@ -37,15 +38,13 @@ const Details = ({ user, deleteUser }) => {
       <div className="spacer"></div>
       <div className="button-group">
         <button
-          className="general-button"
-          id="edit-button"
+          className="general-button edit-button"
           onClick={() => setFormView(!formView)}
         >
           Edit
         </button>
         <button
-          className="general-button"
-          id="delete-button"
+          className="general-button delete-button"
           onClick={() => deleteUser(user)}
         >
           Delete

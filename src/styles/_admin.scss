@@ -30,6 +30,7 @@
   .admin-main-page {
     background-color: #f1eaea;
     overflow-y: scroll;
+
     .admin-page-nav {
       height: 20%;
       display: flex;
@@ -60,19 +61,18 @@
             display: flex;
             justify-content: space-around;
 
-            #edit-button {
+            .edit-button {
               background-color: rgb(5, 116, 5);
               padding: 0 13px;
               font-size: 0.9em;
             }
-            #delete-button {
+            .delete-button {
               background-color: rgb(248, 63, 63);
               font-size: 0.9em;
               color: black;
             }
           }
           .user-details-text {
-            // text-align: center;
             line-height: 50px;
           }
         }
