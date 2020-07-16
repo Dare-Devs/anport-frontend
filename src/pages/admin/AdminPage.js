@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Navbar from '../../components/Navbar'
 import Porters from './Porters'
 import StudentAffairs from './StudentAffairs'
 
@@ -11,17 +12,7 @@ const AdminPage = () => {
   }
   return (
     <div className="admin-page">
-      <div className="nav-bar">
-        <nav>
-          <img src="anchor_logo.png" alt="logo" />
-          <div className="spacer"></div>
-          <ul>
-            <li>
-              <button>Logout</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <Navbar />
       <div className="sidebar">
         <div className="sidebar-content">
           <ul onClick={() => setCurrentPage(1)}>Manage Student Affairs</ul>
