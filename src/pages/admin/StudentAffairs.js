@@ -13,7 +13,6 @@ const StudentAffairs = () => {
       try {
         const dsas = await dsaService.getAll()
         setDsas(dsas)
-        console.log(dsas)
       } catch (error) {
         console.log(error)
       }
@@ -43,10 +42,26 @@ const StudentAffairs = () => {
       console.log(error.response)
     }
   }
+
+  const submitEditForm = async (user, form) => {
+    try {
+      const newDsa = await dsaService.update(user.id, form)
+      console.log(newDsa)
+    } catch (error) {
+      console.log(error.response)
+    }
+  }
   const adminMainPageContent = () => {
     if (content === 1)
       return <AddForm handleCreateSubmit={handleCreateSubmit} />
-    if (content === 2) return <EditUser users={dsas} deleteUser={deleteDsa} />
+    if (content === 2)
+      return (
+        <EditUser
+          users={dsas}
+          deleteUser={deleteDsa}
+          submitEditForm={submitEditForm}
+        />
+      )
   }
   return (
     <div className="admin-main-page">
