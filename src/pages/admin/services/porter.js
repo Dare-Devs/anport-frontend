@@ -16,9 +16,8 @@ const create = async (data) => {
   const response = await axios.post(baseUrl, data)
   return response.data
 }
-const update = async (data) => {
-  const response = await axios.put(baseUrl, data)
+const update = async (id, data) => {
+  const response = await axios.put(`${baseUrl}/${id}`, data)
   return response.data
 }
-
 export default { getAll, remove, create, update }

@@ -13,7 +13,6 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
 
   const handleEditSubmit = (event) => {
     event.preventDefault()
-    console.log('submitted')
     submitEditForm(user, {
       firstName,
       lastName,
@@ -22,6 +21,7 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
       password,
       gender,
     })
+    setFormView(false)
   }
 
   return (

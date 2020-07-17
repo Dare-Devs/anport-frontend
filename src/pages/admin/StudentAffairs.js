@@ -14,7 +14,7 @@ const StudentAffairs = () => {
         const dsas = await dsaService.getAll()
         setDsas(dsas)
       } catch (error) {
-        console.log(error)
+        alert(error.response.data)
       }
     }
     getdsas()
@@ -31,7 +31,7 @@ const StudentAffairs = () => {
         setDsas(dsas.filter((d) => d.id !== dsa.id))
       }
     } catch (error) {
-      console.log(error.response)
+      alert(error.response.data)
     }
   }
   const handleCreateSubmit = async (formdata) => {
@@ -39,7 +39,7 @@ const StudentAffairs = () => {
       const dsa = await dsaService.create(formdata)
       setDsas([...dsas, dsa])
     } catch (error) {
-      console.log(error.response)
+      alert(error.response.data)
     }
   }
 
@@ -47,8 +47,10 @@ const StudentAffairs = () => {
     try {
       const newDsa = await dsaService.update(user.id, form)
       console.log(newDsa)
+      setDsas([...dsas.filter((d) => d.id !== newDsa.id), newDsa])
+      alert('Updated Successfully')
     } catch (error) {
-      console.log(error.response)
+      alert(error.response.data)
     }
   }
   const adminMainPageContent = () => {

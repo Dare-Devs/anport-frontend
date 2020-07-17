@@ -31,7 +31,7 @@ const Porters = () => {
         setPorters(porters.filter((p) => p.id !== porter.id))
       }
     } catch (error) {
-      console.log(error.response)
+      alert(error.response.data)
     }
   }
   const handleCreateSubmit = async (formdata) => {
@@ -39,14 +39,29 @@ const Porters = () => {
       const porter = await porterService.create(formdata)
       setPorters([...porters, porter])
     } catch (error) {
-      console.log(error.response)
+      alert(error.response.data)
+    }
+  }
+  const submitEditForm = async (user, form) => {
+    try {
+      const newPorter = await porterService.update(user.id, form)
+      setPorters([...porters.filter((d) => d.id !== newPorter.id), newPorter])
+      alert('Updated Successfully')
+    } catch (error) {
+      alert(error.response.data)
     }
   }
   const adminMainPageContent = () => {
     if (content === 1)
       return <AddForm handleCreateSubmit={handleCreateSubmit} />
     if (content === 2)
-      return <EditUser users={porters} deleteUser={deletePorter} />
+      return (
+        <EditUser
+          users={porters}
+          deleteUser={deletePorter}
+          submitEditForm={submitEditForm}
+        />
+      )
   }
   return (
     <div className="admin-main-page">
