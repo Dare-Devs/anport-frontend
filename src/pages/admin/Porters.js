@@ -38,6 +38,7 @@ const Porters = () => {
     try {
       const porter = await porterService.create(formdata)
       setPorters([...porters, porter])
+      alert('Added Successfully')
     } catch (error) {
       alert(error.response.data)
     }

@@ -38,6 +38,7 @@ const StudentAffairs = () => {
     try {
       const dsa = await dsaService.create(formdata)
       setDsas([...dsas, dsa])
+      alert('Added Successfully')
     } catch (error) {
       alert(error.response.data)
     }
