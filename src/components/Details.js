@@ -57,10 +57,7 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
                   />
                 </td>
               </tr>
-              <tr>
-                <td>Gender</td>
-                <td>{user.gender}</td>
-              </tr>
+
               <tr>
                 <td>{user.schoolId}</td>
                 <td>
@@ -94,6 +91,10 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
                     onChange={({ target }) => setPassword(target.value)}
                   />
                 </td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>{user.gender}</td>
               </tr>
             </tbody>
           </table>
@@ -139,6 +140,7 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
         </button>
         <button
           className="general-button delete-button"
+          style={buttonToHide}
           onClick={() => deleteUser(user)}
         >
           Delete
