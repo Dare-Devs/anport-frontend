@@ -24,6 +24,8 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
     setFormView(false)
   }
 
+  const buttonToHide = formView ? { display: 'none' } : { display: '' }
+  const buttonToShow = !formView ? { display: 'none' } : { display: '' }
   return (
     <div className="user-details">
       <div className="user-details-text">
@@ -31,57 +33,75 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
           {user.firstName}&nbsp;{user.lastName}{' '}
         </div>
         <form style={showOnEdit} onSubmit={handleEditSubmit}>
-          <div>
-            {user.firstName}&nbsp;
-            <input
-              type="text"
-              placeholder="Firstname"
-              value={firstName}
-              onChange={({ target }) => setFirstName(target.value)}
-            />
-          </div>{' '}
-          <div>
-            {user.lastName}&nbsp;
-            <input
-              type="text"
-              placeholder="Lastname"
-              value={lastName}
-              onChange={({ target }) => setLastName(target.value)}
-            />
-          </div>
-          <div>
-            {user.schoolId}&nbsp;
-            <input
-              type="text"
-              placeholder="School Id"
-              value={schoolId}
-              onChange={({ target }) => setSchoolId(target.value)}
-            />
-          </div>
-          <div>
-            {user.email}&nbsp;
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={({ target }) => setEmail(target.value)}
-            />
-          </div>
-          <div>
-            Password&nbsp;
-            <input
-              type="password"
-              autoComplete="current-password "
-              placeholder="Password"
-              value={password}
-              onChange={({ target }) => setPassword(target.value)}
-            />
-          </div>
+          <table>
+            <tbody>
+              <tr>
+                <td>{user.firstName}</td>
+                <td>
+                  <input
+                    type="text"
+                    placeholder="Firstname"
+                    value={firstName}
+                    onChange={({ target }) => setFirstName(target.value)}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>{user.lastName}</td>
+                <td>
+                  <input
+                    type="text"
+                    placeholder="Lastname"
+                    value={lastName}
+                    onChange={({ target }) => setLastName(target.value)}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>{user.gender}</td>
+              </tr>
+              <tr>
+                <td>{user.schoolId}</td>
+                <td>
+                  <input
+                    type="text"
+                    placeholder="School Id"
+                    value={schoolId}
+                    onChange={({ target }) => setSchoolId(target.value)}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>{user.email}</td>
+                <td>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={({ target }) => setEmail(target.value)}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>
+                  <input
+                    type="password"
+                    autoComplete="current-password "
+                    placeholder="Password"
+                    value={password}
+                    onChange={({ target }) => setPassword(target.value)}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <div className="form-input radio">
             <label htmlFor="male">
               <input
                 type="radio"
-                id="male"
                 name="male-female"
                 onChange={() => setGender('MALE')}
               />
@@ -90,23 +110,32 @@ const Details = ({ user, deleteUser, submitEditForm }) => {
             <label htmlFor="female">
               <input
                 type="radio"
-                id="female"
                 name="male-female"
                 onChange={() => setGender('FEMALE')}
               />
               Female
             </label>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" className="edit-submit-button">
+            Submit
+          </button>
         </form>
       </div>
       <div className="spacer"></div>
       <div className="button-group">
         <button
           className="general-button edit-button"
-          onClick={() => setFormView(!formView)}
+          style={buttonToHide}
+          onClick={() => setFormView(true)}
         >
           Edit
+        </button>
+        <button
+          className="general-button cancel-button"
+          style={buttonToShow}
+          onClick={() => setFormView(false)}
+        >
+          Cancel
         </button>
         <button
           className="general-button delete-button"

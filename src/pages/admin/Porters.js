@@ -14,7 +14,7 @@ const Porters = () => {
         const porters = await porterService.getAll()
         setPorters(porters)
       } catch (error) {
-        console.log(error)
+        alert(`error: ${error.response.data.error}`)
       }
     }
     getporters()
@@ -31,7 +31,7 @@ const Porters = () => {
         setPorters(porters.filter((p) => p.id !== porter.id))
       }
     } catch (error) {
-      alert(error.response.data)
+      alert(`error: ${error.response.data.error}`)
     }
   }
   const handleCreateSubmit = async (formdata) => {
@@ -40,7 +40,7 @@ const Porters = () => {
       setPorters([...porters, porter])
       alert('Added Successfully')
     } catch (error) {
-      alert(error.response.data)
+      alert(`error: ${error.response.data.error}`)
     }
   }
   const submitEditForm = async (user, form) => {
@@ -49,7 +49,7 @@ const Porters = () => {
       setPorters([...porters.filter((d) => d.id !== newPorter.id), newPorter])
       alert('Updated Successfully')
     } catch (error) {
-      alert(error.response.data)
+      alert(`error: ${error.response.data.error}`)
     }
   }
   const adminMainPageContent = () => {
