@@ -1,13 +1,10 @@
 .porter-page {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 2.5fr 1fr;
-  grid-template-rows: 0.5fr 6fr;
+  display: flex;
+  flex-direction: column;
 
   .porter-main-page {
     background-color: #f1eaea;
-    height: 100%;
-    grid-column: 2 / 3;
     overflow-y: scroll;
   }
 }
