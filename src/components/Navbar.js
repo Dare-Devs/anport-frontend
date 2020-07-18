@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="spacer"></div>
         <ul>
           <li>
-            <button>Logout</button>
+            <button>LOGOUT</button>
           </li>
         </ul>
       </nav>
