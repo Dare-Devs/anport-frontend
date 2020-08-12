@@ -9,11 +9,11 @@ const AdminPage = () => {
     <div className="admin-page">
       <AppBar />
       <Switch>
-        <Route exact path="/" component={StudentAffairs} />
-        <Route path="/student-affairs">
+        <Route exact path="/admin" component={StudentAffairs} />
+        <Route path="/admin/student-affairs">
           <StudentAffairs />
         </Route>
-        <Route path="/porters">
+        <Route path="/admin/porters">
           <Porters />
         </Route>
       </Switch>
