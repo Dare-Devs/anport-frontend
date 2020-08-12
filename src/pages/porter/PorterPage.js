@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../../components/Navbar'
+import AppBar from '../../components/AppBar'
 import NewPost from './NewPost'
 
 const PorterPage = () => {
   return (
     <div className="porter-page">
-      <Navbar />
+      <AppBar />
       <div className="porter-main-page">
         <NewPost />
       </div>
