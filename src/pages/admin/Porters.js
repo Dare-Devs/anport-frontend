@@ -5,7 +5,7 @@ import ButtonNav from './ButtonNav'
 import EditUser from '../../components/EditUser'
 
 const Porters = () => {
-  const [content, setContent] = useState(1)
+  const [content, setContent] = useState('add')
   const [porters, setPorters] = useState([])
 
   useEffect(() => {
@@ -52,26 +52,25 @@ const Porters = () => {
       alert(`error: ${error.response.data.error}`)
     }
   }
-  const adminMainPageContent = () => {
-    if (content === 1)
-      return <AddForm handleCreateSubmit={handleCreateSubmit} />
-    if (content === 2)
-      return (
+
+  return (
+    <div className="container content">
+      <h2 className="heading">PORTERS</h2>
+      <ButtonNav
+        button1="Add User"
+        button2="Edit Details"
+        content={content}
+        setContent={setContent}
+      />
+      {content === 'add' ? (
+        <AddForm handleCreateSubmit={handleCreateSubmit} />
+      ) : (
         <EditUser
           users={porters}
           deleteUser={deletePorter}
           submitEditForm={submitEditForm}
         />
-      )
-  }
-  return (
-    <div className="admin-main-page">
-      <ButtonNav
-        button1="Add Porter"
-        button2="Porter Details"
-        setContent={setContent}
-      />
-      <div className="admin-page-content">{adminMainPageContent()}</div>
+      )}
     </div>
   )
 }

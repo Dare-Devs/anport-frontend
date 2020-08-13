@@ -22,6 +22,7 @@ const AppBar = () => {
           <Nav.Link href="#" as="span">
             <em>Tekipeps logged in </em>
             <Button
+              className="logout-button"
               onClick={() => {
                 console.log('logged out')
               }}

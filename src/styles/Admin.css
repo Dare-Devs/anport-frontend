@@ -4,12 +4,13 @@
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
 }
-.nav-button {
-  margin: 10px;
-}
 .edit-user {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  width: 100%;
   max-width: 100%;
   min-height: 95%;
   overflow: scroll;
+}
+.add-form {
+  padding: 0 10px;
 }

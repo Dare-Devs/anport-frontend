@@ -28,8 +28,8 @@ const AddForm = ({ handleCreateSubmit }) => {
   }
 
   return (
-    <form className="form" onSubmit={submit}>
-      <Form>
+    <div>
+      <Form className="add-form" onSubmit={submit}>
         <Form.Group>
           <Form.Control
             type="text"
@@ -98,11 +98,13 @@ const AddForm = ({ handleCreateSubmit }) => {
             Do not share the details of this user to anyone else!
           </Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <div className="submit-button-container">
+          <Button className="submit-button" variant="primary" type="submit">
+            Submit
+          </Button>
+        </div>
       </Form>
-    </form>
+    </div>
   )
 }
 
