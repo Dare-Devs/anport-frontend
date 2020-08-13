@@ -6,15 +6,15 @@ const AppBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Navbar.Brand>
-        <img className="logo" src="anchor_logo.png" alt="logo" />
+        <img className="logo" src="/anchor_logo.png" alt="logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/student-affairs" href="#">
+          <Nav.Link as={Link} to="/admin/student-affairs" href="#">
             Manage Student Affairs
           </Nav.Link>
-          <Nav.Link as={Link} to="/porters" href="#">
+          <Nav.Link as={Link} to="/admin/porters" href="#">
             Manage Porters
           </Nav.Link>
         </Nav>

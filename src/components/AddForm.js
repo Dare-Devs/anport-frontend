@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Form, Button } from 'react-bootstrap'
 
 const AddForm = ({ handleCreateSubmit }) => {
   const [firstName, setFirstName] = useState('')
@@ -28,80 +29,79 @@ const AddForm = ({ handleCreateSubmit }) => {
 
   return (
     <form className="form" onSubmit={submit}>
-      <div className="form-input">
-        <label>Firstname &nbsp;</label>
-        <input
-          type="text"
-          value={firstName}
-          onChange={({ target }) => setFirstName(target.value.trim())}
-          required
-        />
-      </div>
-      <div className="form-input">
-        <label>Lastname &nbsp;</label>
-        <input
-          type="text"
-          value={lastName}
-          onChange={({ target }) => setLastName(target.value.trim())}
-          required
-        />
-      </div>
-      <div className="form-input">
-        <label>School Id &nbsp;</label>
-        <input
-          type="text"
-          value={schoolId}
-          onChange={({ target }) => setSchoolId(target.value.trim())}
-          autoComplete="text"
-          required
-        />
-      </div>
-      <div className="form-input">
-        <label>Email &nbsp;</label>
-        <input
-          type="email"
-          value={email}
-          autoComplete="email"
-          onChange={({ target }) => setEmail(target.value.trim())}
-          required
-        />
-      </div>
-      <div className="form-input">
-        <label>Password &nbsp;</label>
-        <input
-          type="password"
-          value={password}
-          autoComplete="current-password"
-          onChange={({ target }) => setPassword(target.value.trim())}
-          required
-        />
-      </div>
-      <div className="form-input radio">
-        <label htmlFor="male">
-          <input
+      <Form>
+        <Form.Group>
+          <Form.Control
+            type="text"
+            placeholder="Enter Firstname"
+            value={firstName}
+            onChange={({ target }) => setFirstName(target.value.trim())}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Control
+            type="text"
+            placeholder="Enter Lastname"
+            value={lastName}
+            onChange={({ target }) => setLastName(target.value.trim())}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Control
+            type="text"
+            placeholder="Enter SchoolId"
+            value={schoolId}
+            onChange={({ target }) => setSchoolId(target.value.trim())}
+            autoComplete="text"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Control
+            type="text"
+            placeholder="Enter Email"
+            value={email}
+            autoComplete="email"
+            onChange={({ target }) => setEmail(target.value.trim())}
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Control
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            autoComplete="current-password"
+            onChange={({ target }) => setPassword(target.value.trim())}
+            required
+          />
+        </Form.Group>
+        <Form.Group id="formGridCheckbox">
+          <Form.Check
             type="radio"
-            id="male"
+            label="Male"
             name="male-female"
             onChange={() => setGender('MALE')}
             required
           />
-          Male
-        </label>
-        <label htmlFor="female">
-          <input
+          <Form.Check
             type="radio"
-            id="female"
-            value="female"
+            label="Female"
             name="male-female"
             onChange={() => setGender('FEMALE')}
           />
-          Female
-        </label>
-      </div>
-
-      <button className="general-button" type="submit">
-        Submit
-      </button>
+        </Form.Group>
+        <Form.Group>
+          <Form.Text className="text-muted">
+            Do not share the details of this user to anyone else!
+          </Form.Text>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </form>
   )
 }

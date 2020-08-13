@@ -5,7 +5,7 @@ import EditUser from '../../components/EditUser'
 import dsaService from './services/dsa'
 
 const StudentAffairs = () => {
-  const [content, setContent] = useState(1)
+  const [content, setContent] = useState('add')
   const [dsas, setDsas] = useState([])
 
   useEffect(() => {
@@ -54,26 +54,25 @@ const StudentAffairs = () => {
       alert(`error: ${error.response.data.error}`)
     }
   }
-  const adminMainPageContent = () => {
-    if (content === 1)
-      return <AddForm handleCreateSubmit={handleCreateSubmit} />
-    if (content === 2)
-      return (
+
+  return (
+    <div className="container content">
+      <h2 className="heading">STUDENT AFFAIRS</h2>
+      <ButtonNav
+        button1="Add User"
+        button2="Edit Details"
+        content={content}
+        setContent={setContent}
+      />
+      {content === 'add' ? (
+        <AddForm handleCreateSubmit={handleCreateSubmit} />
+      ) : (
         <EditUser
           users={dsas}
           deleteUser={deleteDsa}
           submitEditForm={submitEditForm}
         />
-      )
-  }
-  return (
-    <div className="admin-main-page">
-      <ButtonNav
-        button1="Add StudentAffairs"
-        button2="Edit Student Affairs Details"
-        setContent={setContent}
-      />
-      <div className="admin-page-content">{adminMainPageContent()}</div>
+      )}
     </div>
   )
 }

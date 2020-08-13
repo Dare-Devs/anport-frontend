@@ -3,13 +3,16 @@ import Porters from './Porters'
 import { Switch, Route } from 'react-router-dom'
 import StudentAffairs from './StudentAffairs'
 import AppBar from '../../components/AppBar'
+import Footer from '../../components/Footer'
 
 const AdminPage = () => {
   return (
     <div className="admin-page">
       <AppBar />
       <Switch>
-        <Route exact path="/admin" component={StudentAffairs} />
+        <Route exact path="/admin">
+          <h1>Hello</h1>
+        </Route>
         <Route path="/admin/student-affairs">
           <StudentAffairs />
         </Route>
@@ -17,6 +20,7 @@ const AdminPage = () => {
           <Porters />
         </Route>
       </Switch>
+      <Footer />
     </div>
   )
 }

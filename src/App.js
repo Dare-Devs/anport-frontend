@@ -5,7 +5,7 @@ import PorterPage from './pages/porter/PorterPage'
 
 const App = () => {
   return (
-    <div>
+    <>
       <Switch>
         <Route exact path="/">
           <h1>welcome</h1>
@@ -17,7 +17,7 @@ const App = () => {
           <PorterPage />
         </Route>
       </Switch>
-    </div>
+    </>
   )
 }
 

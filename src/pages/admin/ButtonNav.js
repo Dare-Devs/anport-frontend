@@ -1,14 +1,25 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
-const ButtonNav = ({ button1, button2, setContent }) => {
+const ButtonNav = ({ button1, button2, setContent, content }) => {
+  const showAdd = content === 'add' ? { display: 'none' } : { display: '' }
+  const showEdit = content === 'edit' ? { display: 'none' } : { display: '' }
   return (
-    <div className="admin-page-nav">
-      <button className="general-button" onClick={() => setContent(1)}>
-        {button1}
-      </button>
-      <button className="general-button" onClick={() => setContent(2)}>
-        {button2}
-      </button>
+    <div className="add-edit-nav">
+      <Button
+        style={showAdd}
+        className="nav-button"
+        onClick={() => setContent('add')}
+      >
+        {button1} &#8594;
+      </Button>
+      <Button
+        style={showEdit}
+        className="nav-button"
+        onClick={() => setContent('edit')}
+      >
+        {button2} &#8594;
+      </Button>
     </div>
   )
 }
