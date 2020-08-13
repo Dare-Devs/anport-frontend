@@ -5,7 +5,7 @@ const ButtonNav = ({ button1, button2, setContent, content }) => {
   const showAdd = content === 'add' ? { display: 'none' } : { display: '' }
   const showEdit = content === 'edit' ? { display: 'none' } : { display: '' }
   return (
-    <div className="add-edit-nav">
+    <div>
       <Button
         style={showAdd}
         className="nav-button"

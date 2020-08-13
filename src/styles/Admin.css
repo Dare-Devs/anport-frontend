@@ -1,8 +1,8 @@
 .admin-page {
   display: grid;
   height: 100%;
-  width: 100%;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
 }
 .nav-button {
   margin: 10px;
@@ -10,4 +10,6 @@
 .edit-user {
   border: 1px solid red;
   max-width: 100%;
+  min-height: 95%;
+  overflow: scroll;
 }
