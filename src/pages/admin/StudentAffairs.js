@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import AddForm from '../../components/AddForm'
-import ButtonNav from './ButtonNav'
-import EditUser from '../../components/EditUser'
-import dsaService from './services/dsa'
+import React, { useState, useEffect } from "react";
+import AddForm from "../../components/AddForm";
+import ButtonNav from "./ButtonNav";
+import EditUser from "../../components/EditUser";
+import dsaService from "./services/dsa";
 
 const StudentAffairs = () => {
-  const [content, setContent] = useState('add')
-  const [dsas, setDsas] = useState([])
+  const [content, setContent] = useState("add");
+  const [dsas, setDsas] = useState([]);
 
   useEffect(() => {
     const getdsas = async () => {
       try {
-        const dsas = await dsaService.getAll()
-        setDsas(dsas)
+        const dsas = await dsaService.getAll();
+        setDsas(dsas);
       } catch (error) {
-        alert(`error: ${error.response.data.error}`)
+        console.log(`error: ${error.response.data.error}`);
       }
-    }
-    getdsas()
-  }, [])
+    };
+    getdsas();
+  }, []);
 
   const deleteDsa = async (dsa) => {
     try {
@@ -27,33 +27,33 @@ const StudentAffairs = () => {
           `Delete ${dsa.firstName} ${dsa.lastName} from the system? `
         )
       ) {
-        await dsaService.remove(dsa.id)
-        setDsas(dsas.filter((d) => d.id !== dsa.id))
+        await dsaService.remove(dsa.id);
+        setDsas(dsas.filter((d) => d.id !== dsa.id));
       }
     } catch (error) {
-      alert(`error: ${error.response.data.error}`)
+      alert(`error: ${error.response.data.error}`);
     }
-  }
+  };
   const handleCreateSubmit = async (formdata) => {
     try {
-      const dsa = await dsaService.create(formdata)
-      setDsas([...dsas, dsa])
-      alert('Added Successfully')
+      const dsa = await dsaService.create(formdata);
+      setDsas([...dsas, dsa]);
+      alert("Added Successfully");
     } catch (error) {
-      alert(`error: ${error.response.data.error}`)
+      alert(`error: ${error.response.data.error}`);
     }
-  }
+  };
 
   const submitEditForm = async (user, form) => {
     try {
-      const newDsa = await dsaService.update(user.id, form)
-      console.log(newDsa)
-      setDsas([...dsas.filter((d) => d.id !== newDsa.id), newDsa])
-      alert('Updated Successfully')
+      const newDsa = await dsaService.update(user.id, form);
+      console.log(newDsa);
+      setDsas([...dsas.filter((d) => d.id !== newDsa.id), newDsa]);
+      alert("Updated Successfully");
     } catch (error) {
-      alert(`error: ${error.response.data.error}`)
+      alert(`error: ${error.response.data.error}`);
     }
-  }
+  };
 
   return (
     <div className="container content">
@@ -64,7 +64,7 @@ const StudentAffairs = () => {
         content={content}
         setContent={setContent}
       />
-      {content === 'add' ? (
+      {content === "add" ? (
         <AddForm handleCreateSubmit={handleCreateSubmit} />
       ) : (
         <EditUser
@@ -74,7 +74,7 @@ const StudentAffairs = () => {
         />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default StudentAffairs
+export default StudentAffairs;

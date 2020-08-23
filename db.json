@@ -1,0 +1,88 @@
+{
+  "dsa": [
+    {
+      "id": 1,
+      "schoolId": "AUL/AUL/AUL/1",
+      "firstName": "Tekena",
+      "lastName": "Solomon",
+      "gender": "MALE",
+      "email": "tekipeps@gmail.com"
+    },
+    {
+      "id": 2,
+      "schoolId": "AUL/AUL/AUL/2",
+      "firstName": "Otiger",
+      "lastName": "Favour",
+      "gender": "MALE",
+      "email": "caxvb@gmail.com"
+    },
+    {
+      "id": 3,
+      "schoolId": "AUL/AUL/AUL/3",
+      "firstName": "Preye",
+      "lastName": "Jaja",
+      "gender": "FEMALE",
+      "email": "jaja@gmail.com"
+    },
+    {
+      "id": 4,
+      "schoolId": "AUL/AUL/AUL/4",
+      "firstName": "Opribo",
+      "lastName": "Sampson",
+      "gender": "MALE",
+      "email": "osampson@gmail.com"
+    },
+    {
+      "firstName": "Dodo",
+      "lastName": "Parrot",
+      "schoolId": "AUL/AUL/AUL/X",
+      "email": "dodop@yahoo.com",
+      "password": "dododododdo",
+      "gender": "MALE",
+      "id": 5
+    }
+  ],
+  "porter": [
+    {
+      "id": 1,
+      "schoolId": "AUL/AUL/AUL/1",
+      "firstName": "Tekena",
+      "lastName": "Solomon",
+      "gender": "MALE",
+      "email": "tekipeps@gmail.com"
+    },
+    {
+      "id": 2,
+      "schoolId": "AUL/AUL/AUL/2",
+      "firstName": "Otiger",
+      "lastName": "Favour",
+      "gender": "MALE",
+      "email": "caxvb@gmail.com"
+    },
+    {
+      "id": 3,
+      "schoolId": "AUL/AUL/AUL/3",
+      "firstName": "Preye",
+      "lastName": "Jaja",
+      "gender": "FEMALE",
+      "email": "jaja@gmail.com"
+    },
+    {
+      "id": 4,
+      "schoolId": "AUL/AUL/AUL/4",
+      "firstName": "Opribo",
+      "lastName": "Sampson",
+      "gender": "MALE",
+      "email": "osampson@gmail.com"
+    },
+    {
+      "firstName": "Dodo",
+      "lastName": "Parrot",
+      "schoolId": "AUL/AUL/AUL/X",
+      "email": "dodop@yahoo.com",
+      "password": "dododododdo",
+      "gender": "MALE",
+      "id": 5
+    }
+  ]
+}
