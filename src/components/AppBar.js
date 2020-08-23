@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Navbar, Nav, Button } from 'react-bootstrap'
+import React from "react";
+import { Navbar, Nav, Button } from "react-bootstrap";
 
-const AppBar = () => {
+const AppBar = ({ routes, setPage }) => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Navbar.Brand>
@@ -11,12 +10,11 @@ const AppBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/admin/student-affairs" href="#">
-            Manage Student Affairs
-          </Nav.Link>
-          <Nav.Link as={Link} to="/admin/porters" href="#">
-            Manage Porters
-          </Nav.Link>
+          {routes.map((route, i) => (
+            <Nav.Link key={i} onClick={() => setPage(route.value)}>
+              {route.name}
+            </Nav.Link>
+          ))}
         </Nav>
         <Nav>
           <Nav.Link href="#" as="span">
@@ -24,7 +22,7 @@ const AppBar = () => {
             <Button
               className="logout-button"
               onClick={() => {
-                console.log('logged out')
+                console.log("logged out");
               }}
             >
               <em>Logout</em>
@@ -33,7 +31,7 @@ const AppBar = () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  )
-}
+  );
+};
 
-export default AppBar
+export default AppBar;
